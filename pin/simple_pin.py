@@ -9,22 +9,21 @@ def is_in_list(l, c):
 #end function
 
 def gen_perm(list_of_chars, n):
-    out = []
     if n == 1:
         for c in list_of_chars:
-            out.append([c])
+            yield [c]
         #next
-        return out
     #end if
-    last_list = gen_perm(list_of_chars, n - 1)
-    for c in list_of_chars:
+    else:
+        last_list = gen_perm(list_of_chars, n - 1)
         for l in last_list:
-            if is_in_list(l, c) == False:
-                out.append([c] + l)
-            #end if
+            for c in list_of_chars:
+                if is_in_list(l, c) == False:
+                    yield ([c] + l)
+                #end if
+            #next
         #next
-    #next
-    return out
+    #end else
 #end function
 
 
