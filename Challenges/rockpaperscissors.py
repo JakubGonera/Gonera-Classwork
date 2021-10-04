@@ -8,6 +8,8 @@ nameDict = {
 
 nameList = ["rock", "paper", "scissors"]
 
+### SRC - This is a great solution, but can you do it without dictionaries or 2D lists?
+
 outcomes = [
     ["It's draw", "You loose", "You win"],
     ["You win", "It's draw", "You loose"],
