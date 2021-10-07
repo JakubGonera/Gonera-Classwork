@@ -8,11 +8,7 @@ nameDict = {
 
 nameList = ["rock", "paper", "scissors"]
 
-outcomes = [
-    ["It's draw", "You loose", "You win"],
-    ["You win", "It's draw", "You loose"],
-    ["You loose", "You win", "It's draw"]
-]
+outcomes = ["It's draw", "You loose", "You win"]
 
 print("Choose: rock, paper or scissors:")
 choice = input()
@@ -20,4 +16,4 @@ choice = input()
 computerChoice = random.randint(0,2)
 
 print("Computer chose", nameList[computerChoice])
-print(outcomes[nameDict[choice]][computerChoice])
+print(outcomes[(computerChoice - nameDict[choice] + 3)%3])
