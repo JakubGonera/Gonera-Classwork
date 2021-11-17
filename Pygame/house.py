@@ -32,9 +32,9 @@ while not done:
     #Next event
 
     screen.fill (BLACK)
-
-    sun_y = math.sin((time.time() - start_time) / 2 + (3.14 * 3)/4) * radius + 240
-    sun_x = math.cos((time.time() - start_time) / 2 + (3.14 * 3)/4) * radius + 320
+    ### SRC - I had an issue with sun_y & sun_x being floats
+    sun_y = int(math.sin((time.time() - start_time) / 2 + (3.14 * 3)/4) * radius + 240)
+    sun_x = int(math.cos((time.time() - start_time) / 2 + (3.14 * 3)/4) * radius + 320)
     pygame.draw.rect(screen, BLUE, (220,165,200,150))
     pygame.draw.circle(screen, YELLOW, (sun_x,sun_y),40,0)
     pygame.draw.rect(screen, BLACK, (0, 315, 640, 165))
